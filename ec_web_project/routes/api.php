@@ -17,11 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware(['cors'])->group( function() {
+Route::group(['middleware' => ['api']], function(){
    Route::options('user', function () {
        return response()->json();
    });
 
-   // 下記のgetのように記載していく
-//    Route::get('/user', "API\UserController@index");
+    Route::match(['post', 'options'], '/user/create', 'UserController@store');
+
 });
