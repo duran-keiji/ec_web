@@ -19,6 +19,10 @@ class CreateUserInfosTable extends Migration
             $table->string('first_name', 50)->nullable(false);
             $table->string('mail', 256)->unique()->nullable(false);
             $table->string('password', 50)->nullable(false);
+            $table->smallInteger('age')->nullable(false);
+            $table->tinyInteger('sex')->nullable(false);
+            $table->smallInteger('interest')->nullable();
+            $table->tinyInteger('delete_flg')->nullable(false);
             $table->timestamps();
         });
     }

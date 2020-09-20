@@ -12,19 +12,31 @@
                 <v-container>
                   <v-row>
                     <v-col cols="12" sm="4" md="6">
-                      <v-text-field label="姓*" required></v-text-field>
+                      <v-text-field label="姓*" required id="last-name" v-model="UserInfo.last_name"></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="4" md="6">
-                      <v-text-field label="名*" persistent-hint required></v-text-field>
+                      <v-text-field
+                        label="名*"
+                        persistent-hint
+                        required
+                        id="first-name"
+                        v-model="UserInfo.first_name"
+                      ></v-text-field>
                     </v-col>
                     <v-col cols="12">
-                      <v-text-field label="メールアドレス*" required></v-text-field>
+                      <v-text-field label="メールアドレス*" required id="mail" v-model="UserInfo.mail"></v-text-field>
                     </v-col>
                     <v-col cols="12">
-                      <v-text-field label="パスワード*" type="password" required></v-text-field>
+                      <v-text-field
+                        label="パスワード*"
+                        type="password"
+                        required
+                        id="password"
+                        v-model="UserInfo.password"
+                      ></v-text-field>
                     </v-col>
                     <v-col cols="12">
-                      <v-text-field label="パスワード再確認*" type="password" required></v-text-field>
+                      <v-text-field label="パスワード再確認*" type="password" required id="check-password"></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6">
                       <v-select
@@ -92,9 +104,11 @@ export default {
       // 右のUser.infoのvalueはv-modelのvalue
       this.UserInfo.age = this.UserInfo.age.value;
       this.UserInfo.sex = this.UserInfo.sex.value;
+      this.UserInfo.delete_flg = 0;
       console.log(this.UserInfo.sex);
+      console.log(this.UserInfo);
 
-      this.axios.post("/api/UserCreate", this.UserInfo).then(response => {
+      this.axios.post("/api/user/create", this.UserInfo).then(res => {
         this.$router.push({ name: "Login" });
       });
     }

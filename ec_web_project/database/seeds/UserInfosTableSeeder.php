@@ -14,11 +14,13 @@ class UserInfosTableSeeder extends Seeder
     {
         for ($i = 1; $i <= 9; $i++) {
              UserInfo::create([
-                 'last_name' => '田中' . $i,
-                 'first_name' => '太郎' . $i,
-                 'mail' => 'mail' . $i . '@gmail.com',
-                 'password' => $i . $i . $i . $i,
-
+                'last_name' => '田中' . $i,
+                'first_name' => '太郎' . $i,
+                'mail' => 'mail' . $i . '@gmail.com',
+                'password' => $i . $i . $i . $i,
+                'age' => 2,
+                'sex' => 1,
+                'delete_flg' => 0
              ]);
         }
     }

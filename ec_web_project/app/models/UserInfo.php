@@ -10,6 +10,11 @@ class UserInfo extends Model
         'last_name',
         'first_name',
         'mail',
-        'password'
+        'password',
+        'age',
+        'sex',
+        'interest',
+        'delete_flg'
+        
     ];
 }

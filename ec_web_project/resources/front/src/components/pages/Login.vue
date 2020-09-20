@@ -28,7 +28,8 @@
                 </v-form>
               </v-card-text>
               <v-card-actions>
-                <v-btn v-bind:to="{ name: 'UserCreate' }" style="float: left" color="teal">新規登録</v-btn>
+                <v-btn v-bind:to="{ name: 'UserCreate' }" color="teal">新規登録</v-btn>
+                <v-spacer></v-spacer>
                 <v-spacer></v-spacer>
                 <v-btn color="primary">ログイン</v-btn>
               </v-card-actions>
