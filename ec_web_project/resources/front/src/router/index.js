@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../components/pages/Login'
 import UserCreate from '../components/pages/UserCreate'
+import Top from '../components/pages/Top'
 
 Vue.use(VueRouter)
 
@@ -14,6 +15,11 @@ const routes = [{
         path: '/UserCreate',
         name: 'UserCreate',
         component: UserCreate
+    },
+    {
+        path: '/Top',
+        name: 'Top',
+        component: Top
     }
 ]
 

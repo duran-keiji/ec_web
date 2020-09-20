@@ -101,16 +101,21 @@ export default {
   },
   methods: {
     CreateUser() {
-      // 右のUser.infoのvalueはv-modelのvalue
       this.UserInfo.age = this.UserInfo.age.value;
       this.UserInfo.sex = this.UserInfo.sex.value;
       this.UserInfo.delete_flg = 0;
       console.log(this.UserInfo.sex);
       console.log(this.UserInfo);
 
-      this.axios.post("/api/user/create", this.UserInfo).then(res => {
-        this.$router.push({ name: "Login" });
-      });
+      this.axios
+        .post("/api/user/create", this.UserInfo, {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        .then(res => {
+          this.$router.push({ name: "Login" });
+        });
     }
   }
 };

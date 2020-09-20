@@ -31,7 +31,7 @@
                 <v-btn v-bind:to="{ name: 'UserCreate' }" color="teal">新規登録</v-btn>
                 <v-spacer></v-spacer>
                 <v-spacer></v-spacer>
-                <v-btn color="primary">ログイン</v-btn>
+                <v-btn color="primary" v-bind:to="{ name: 'Top' }">ログイン</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
