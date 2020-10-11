@@ -16,7 +16,7 @@ class UserInfosTableSeeder extends Seeder
              UserInfo::create([
                 'last_name' => '田中' . $i,
                 'first_name' => '太郎' . $i,
-                'mail' => 'mail' . $i . '@gmail.com',
+                'email' => 'email' . $i . '@gmail.com',
                 'password' => $i . $i . $i . $i,
                 'age' => 2,
                 'sex' => 1,

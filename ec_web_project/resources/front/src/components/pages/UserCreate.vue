@@ -24,7 +24,7 @@
                       ></v-text-field>
                     </v-col>
                     <v-col cols="12">
-                      <v-text-field label="メールアドレス*" required id="mail" v-model="UserInfo.mail"></v-text-field>
+                      <v-text-field label="メールアドレス*" required id="email" v-model="UserInfo.email"></v-text-field>
                     </v-col>
                     <v-col cols="12">
                       <v-text-field
@@ -108,11 +108,7 @@ export default {
       console.log(this.UserInfo);
 
       this.axios
-        .post("/api/user/create", this.UserInfo, {
-          headers: {
-            "Content-Type": "application/json"
-          }
-        })
+        .post("http://localhost:80/api/user/create", this.UserInfo)
         .then(res => {
           this.$router.push({ name: "Login" });
         });

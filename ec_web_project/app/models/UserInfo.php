@@ -3,18 +3,33 @@
 namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+// use Illuminate\Foundation\Auth\User as Authenticatable;
+// use Illuminate\Notifications\Notifiable;
 
 class UserInfo extends Model
 {
     protected $fillable = [
         'last_name',
         'first_name',
-        'mail',
+        'email',
         'password',
         'age',
         'sex',
         'interest',
         'delete_flg'
-        
+    ];
+
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
     ];
 }

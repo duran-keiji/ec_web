@@ -15,14 +15,17 @@ class CreateUserInfosTable extends Migration
     {
         Schema::create('user_infos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('last_name', 50)->nullable(false);
-            $table->string('first_name', 50)->nullable(false);
-            $table->string('mail', 256)->unique()->nullable(false);
-            $table->string('password', 50)->nullable(false);
-            $table->smallInteger('age')->nullable();
-            $table->tinyInteger('sex')->nullable();
+            $table->string('last_name', 50);
+            $table->string('first_name', 50);
+            $table->string('email', 256)->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password', 50);
+            $table->smallInteger('age');
+            $table->tinyInteger('sex');
             $table->smallInteger('interest')->nullable();
-            $table->tinyInteger('delete_flg')->nullable(false);
+            $table->rememberToken();
+            $table->tinyInteger('delete_flg');
+
             $table->timestamps();
         });
     }
