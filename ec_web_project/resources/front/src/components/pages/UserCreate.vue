@@ -104,8 +104,6 @@ export default {
       this.UserInfo.age = this.UserInfo.age.value;
       this.UserInfo.sex = this.UserInfo.sex.value;
       this.UserInfo.delete_flg = 0;
-      console.log(this.UserInfo.sex);
-      console.log(this.UserInfo);
 
       this.axios
         .post("http://localhost:80/api/user/create", this.UserInfo)
