@@ -80,6 +80,7 @@ export default {
           .then(res => {
             if (res.data.status == 200) {
               this.$router.push({ name: "Top" });
+              window.location.reload();
             } else {
               alert(res.data.error_msg);
             }

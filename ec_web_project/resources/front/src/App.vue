@@ -35,22 +35,34 @@
       </v-btn>
     </v-app-bar>
 
+    <div v-if="show">
+      <Header />
+    </div>
     <v-main>
       <router-view />
-      <!-- <v-btn color="primaxry"></v-btn> -->
     </v-main>
   </v-app>
 </template>
 
 <script>
-// import Login from "./components/pages/Login";
-
+import Header from "./components/common/Header";
 export default {
   name: "App",
-  components: {},
+  components: {
+    Header
+  },
 
-  data: () => ({
+  data: function() {
+    return {
+      show: true
+    };
     //
-  })
+  },
+  mounted: function() {
+    // URLが"/Login"の場合にヘッダーを非表示
+    if (this.$route.path == "/Login") {
+      this.show = false;
+    }
+  }
 };
 </script>

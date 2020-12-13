@@ -37,12 +37,6 @@ class UserController extends Controller
      */
     public function show($email, $password)
     {
-        //UserInfo::where('email', '=', $email)->where('delete_flg', '=', 0)->first();をreturnするととりあえず動く
-        //Login.vueのgetのparamのpasswordを消す
-        //apiのpasswordを消す
-        //上記のことをすればとりあえず動く
-
-        //現状メールアドレスが合っていれば動く if ($CheckUser)を最後に持ってくる
         $CheckUser = UserInfo::where('email', '=', $email)->where('delete_flg', '=', 0)->first();
         $error_msg = [];
         if (!empty($CheckUser)) {
@@ -53,21 +47,7 @@ class UserController extends Controller
                 return $respons;
             } else {
                 $error_msg = "パスワードが違います";
-            }
-            // $respons = [
-            //     'status' => 200
-            // ];
-            // return $respons;
-            // if ($CheckUser->email !== (string)$email) {
-            //     $error_msg = "メールアドレスが違います";
-            // } elseif ($CheckUser->password !== (string)$password) {
-            //     $error_msg = "パスワードが違います";
-            // }
-            // $respons = [
-            //         'status' => 404,
-            //         'error_msg' => $error_msg
-            // ];
-            // return $respons;  
+            } 
         } else {
             $error_msg = "メールアドレスが違います";
         }
