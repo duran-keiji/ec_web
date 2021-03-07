@@ -24,4 +24,6 @@ Route::group(['middleware' => 'api'], function(){
 
     Route::match(['post', 'options'], '/user/create', 'UserController@store');
     Route::match(['get', 'options'], '/user/get/{email}/{password}', 'UserController@show');
+
+    Route::match(['get', 'options'], '/top/index', 'ItemInfoController@index');
 });

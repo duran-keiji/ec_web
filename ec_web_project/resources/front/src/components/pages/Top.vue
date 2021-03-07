@@ -20,10 +20,6 @@
 </template>
 
 <script>
-var itemCode = ["beats", "nano", "jordan", "case"];
-var itemList = itemCode.map(x =>
-  require("../../assets/image/item/" + x + "-1.png")
-);
 export default {
   name: "Top",
   props: {
@@ -31,8 +27,17 @@ export default {
   },
   data: function() {
     return {
-      itemList
+      itemCode: {},
+      itemList: {}
     };
+  },
+  created: function() {
+    this.axios.get("http://localhost:80/api/top/index").then(res => {
+      this.itemCode = res.data.map(code => code.item_id.toString());
+      this.itemList = this.itemCode.map(x =>
+        require("../../assets/image/item/" + x + "-1.png")
+      );
+    });
   }
 };
 </script>
