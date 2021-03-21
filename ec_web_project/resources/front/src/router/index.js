@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Login from '../components/pages/Login'
 import UserCreate from '../components/pages/UserCreate'
 import Top from '../components/pages/Top'
+import ItemDetail from '../components/pages/ItemDetail'
 
 Vue.use(VueRouter)
 
@@ -20,6 +21,12 @@ const routes = [{
         path: '/Top',
         name: 'Top',
         component: Top
+    },
+    {
+        path: '/ItemDetail/:itemId',
+        name: 'ItemDetail',
+        component: ItemDetail,
+        props: true
     }
 ]
 
