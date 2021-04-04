@@ -35,8 +35,9 @@ class ItemInfoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($itemId)
     {
+        return ItemInfo::where('item_id', $itemId)->first();
         //
     }
 

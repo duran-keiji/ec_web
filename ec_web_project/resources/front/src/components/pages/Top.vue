@@ -5,7 +5,7 @@
         <v-row align="center" justify="center">
           <!-- <v-col v-for="n in 50" :key="n" class="d-flex child-flex" cols="3"> -->
           <v-col v-for="(image, index) in itemList" :key="index" class="d-flex child-flex" cols="3">
-            <router-link v-bind:to="{name:'ItemDetail', params:{itemId:　Number(itemId[index])}}">
+            <router-link v-bind:to="{name:'ItemDetail', params:{itemId: Number(itemId[index])}}">
               <v-img v-bind:src="image" aspect-ratio="1" class="grey lighten-2">
                 <template v-slot:placeholder>
                   <v-row class="fill-height ma-0" align="center" justify="center">
